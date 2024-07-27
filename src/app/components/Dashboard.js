@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { getMessages, sendMessage } from '../services/api';
 import MessageList from './MessageList';
 import MessageForm from './MessageForm';
+import OrderList from './OrderList';
+import PromotionForm from './PromotionForm';
+import ProfileManagement from './ProfileManagement';
 
 const Dashboard = () => {
   const [messages, setMessages] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -12,7 +16,14 @@ const Dashboard = () => {
       setMessages(data);
     };
 
+    const fetchOrders = async () => {
+      // Add API call to fetch orders
+      // const data = await getOrders();
+      // setOrders(data);
+    };
+
     fetchMessages();
+    fetchOrders();
   }, []);
 
   const handleSendMessage = async (message) => {
@@ -22,9 +33,12 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Business Dashboard</h1>
+      <h1>Kota Shop Dashboard</h1>
+      <ProfileManagement />
+      <OrderList orders={orders} />
       <MessageList messages={messages} />
       <MessageForm onSendMessage={handleSendMessage} />
+      <PromotionForm />
     </div>
   );
 };
