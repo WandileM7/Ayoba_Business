@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+<<<<<<< HEAD
 import axios from 'axios';
 
 export default function Home() {
@@ -47,6 +48,10 @@ export default function Home() {
     }
   };
 
+=======
+
+export default function Home() {
+>>>>>>> 6107160d870cd31a9843103e96a5cc34d3aae9a2
   return (
     <main className={styles.main}>
       <div className={styles.description}>
