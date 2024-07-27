@@ -1,0 +1,21 @@
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  section {
+    margin: 20px 0;
+  }
+  
+  textarea,
+  input {
+    width: 300px;
+    margin: 10px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
