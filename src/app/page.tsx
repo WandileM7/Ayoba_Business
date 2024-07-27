@@ -1,22 +1,52 @@
 import Image from "next/image";
-import styles from "../page.module.css";
+import styles from "./page.module.css";
+import LoginForm from "./components/LoginForm";
 
 export default function Home() {
+  let LoginIn = false;
+
+  const handleLogin = (username: string, password: string) => {
+    // Here you would typically validate the credentials with your backend
+    // For this example, we'll just set isLoggedIn to true
+    console.log(`Login attempt with username: ${username}`);
+    LoginIn = true;
+    
+  };
+
+  if (!LoginIn) {
+    return <LoginForm onLogin={handleLogin} />;
+  }
   return (
-    <>
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Welcome to the Ayoba Business App. Start by editing&nbsp;
+          Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
+        <div>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            By{" "}
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className={styles.vercelLogo}
+              width={100}
+              height={24}
+              priority
+            />
+          </a>
+        </div>
       </div>
 
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="/your-logo.svg" // Replace with your app logo
-          alt="Ayoba Business Logo"
+          src="/next.svg"
+          alt="Next.js Logo"
           width={180}
           height={37}
           priority
@@ -25,48 +55,55 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="/docs"
+          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>Find detailed information about the Ayoba Business App features and API.</p>
+          <p>Find in-depth information about Next.js features and API.</p>
         </a>
 
         <a
-          href="/learn"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>
             Learn <span>-&gt;</span>
           </h2>
-          <p>Interactive tutorials to get started with the Ayoba Business App.</p>
+          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
         </a>
 
         <a
-          href="/templates"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>
             Templates <span>-&gt;</span>
           </h2>
-          <p>Explore starter templates for building with the Ayoba Business App.</p>
+          <p>Explore starter templates for Next.js.</p>
         </a>
 
         <a
-          href="/deploy"
+          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>
             Deploy <span>-&gt;</span>
           </h2>
           <p>
-            Learn how to deploy your Ayoba Business App.
+            Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
       </div>
     </main>
-    </>
   );
 }
