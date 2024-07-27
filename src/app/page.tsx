@@ -1,21 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import LoginForm from "./components/LoginForm";
 
 export default function Home() {
-  let LoginIn = false;
-
-  const handleLogin = (username: string, password: string) => {
-    // Here you would typically validate the credentials with your backend
-    // For this example, we'll just set isLoggedIn to true
-    console.log(`Login attempt with username: ${username}`);
-    LoginIn = true;
-    
-  };
-
-  if (!LoginIn) {
-    return <LoginForm onLogin={handleLogin} />;
-  }
   return (
     <main className={styles.main}>
       <div className={styles.description}>
