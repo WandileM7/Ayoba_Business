@@ -226,7 +226,7 @@
   }
   to {
     transform: rotate(0deg);
-  }.main {
+  }}.main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -458,4 +458,4 @@
     }
   }
   
-}
+
